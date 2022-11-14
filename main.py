@@ -1,19 +1,17 @@
 import time
 
 
-input_string = 'Hello Word!'
+input_string = 'Hello World!'
 letters = 'abcdefghijklmnopqrstuvwxyz'
 output_string = ''
-abc = 0
 
 for char in input_string:
     if letters.find(char) != -1:
-        for letter in letters:
+        iterator = iter(letters[:letters.find(char)])
+        output_string = output_string + char
+        for letter in iterator:
             print(output_string + letter)
-            if char == letter:
-                output_string = output_string + letter
-                break
-            time.sleep(0.05)
+            time.sleep(0.04)
     else:
         output_string = output_string + char
         print(output_string)
