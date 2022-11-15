@@ -7,11 +7,11 @@ output_string = ''
 
 for char in input_string:
     if letters.find(char) != -1:
-        iterator = iter(letters[:letters.find(char)])
-        output_string = output_string + char
+        iterator = letters[:letters.find(char)+1]
         for letter in iterator:
             print(output_string + letter)
             time.sleep(0.04)
+        output_string += char
     else:
-        output_string = output_string + char
+        output_string += char
         print(output_string)
