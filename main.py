@@ -1,17 +1,19 @@
+import string
 import time
 
 
+def print_wait(output_string, letter):
+    print(output_string + letter)
+    time.sleep(0.05)
+
+
 input_string = 'Hello World!'
-letters = 'abcdefghijklmnopqrstuvwxyz'
+letters = string.ascii_lowercase
 output_string = ''
 
 for char in input_string:
-    if letters.find(char) != -1:
-        iterator = iter(letters[:letters.find(char)])
-        output_string = output_string + char
-        for letter in iterator:
-            print(output_string + letter)
-            time.sleep(0.04)
-    else:
-        output_string = output_string + char
-        print(output_string)
+#    iterator = [x for x in sorted(set(letters+char)) if x <= char]
+#    iterator = "".join(sorted(set(letters+char))).split(char)[0]+char
+    iterator = (letters.split(char)[0] if len(letters.split(char)) > 1 else "") + char
+    list(map(lambda i: print_wait(output_string, i), iterator))
+    output_string += char
