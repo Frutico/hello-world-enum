@@ -1,14 +1,16 @@
 import string
 import time
 
-output_string = ''
+S55S = ''
 
-def print_wait(letter, char):
-    global output_string
-    print(output_string + letter)
+
+def SS55(S5S5, S5SS):
+    global S55S
+    print(S55S + S5S5)
     time.sleep(0.05)
-    if letter == char:
-        output_string += char
+    if S5S5 == S5SS:
+        S55S += S5SS
 
-input_string = 'Hello World!'
-list(map(lambda char:list(map(lambda i: print_wait(i, char), "".join(sorted(set(string.ascii_lowercase+char))).split(char)[0]+char)),input_string))
+
+SS5S = 'Hello World!'
+list(map(lambda S5S5: list(map(lambda S55S: SS55(S55S, S5S5), "".join(sorted(set(string.ascii_lowercase + S5S5))).split(S5S5)[0] + S5S5)), SS5S))
